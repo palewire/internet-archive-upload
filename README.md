@@ -1,7 +1,3 @@
-# internet-archive-upload
-
-Upload files to an archive.org collection in your GitHub Action
-
 ## Inputs
 
 * `access-key`: Your archive.org access key
