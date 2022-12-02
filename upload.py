@@ -8,7 +8,7 @@ from retry import retry
 def main():
     """Upload the provided files to archive.org."""
     # Get env variables
-    api_key = os.getenv("api-key")
+    access_key = os.getenv("access-key")
     secret_key = os.getenv("secret-key")
     identifier = os.getenv("identifier")
     files = os.getenv("files")
@@ -19,7 +19,7 @@ def main():
 
     logger.debug(f"Uploading {files}")
     kwargs = dict(
-        access_key=api_key,
+        access_key=access_key,
         secret_key=secret_key,
         verbose=True,
         files=files,
