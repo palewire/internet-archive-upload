@@ -1,0 +1,45 @@
+name: Upload files to an archive.org item
+author: Big Local News
+description: Automatically save files with the Internet Archive
+
+branding:
+  icon: upload-cloud
+  color: white
+
+inputs:
+  access-key:
+    description: Your archive.org access key.
+    required: true
+  secret-key:
+    description: Your archive.org secret key
+    required: true
+  identifier:
+    description: The unique identifier of the archive.org item where the file will be stored
+    required: true
+  files:
+    description: The file or folder path inside the action's filesystem to upload
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - id: setup-python
+      name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version:  3.9
+
+    - id: install-deps
+      name: Install Python dependencies
+      run: pip install internetarchive retry
+      shell: bash
+
+    - id: upload-files
+      name: Upload files
+      run: python ${{ github.action_path }}/upload.py
+      shell: bash
+      env:
+          access-key: ${{ inputs.access-key }}
+          secret-key: ${{ inputs.secret-key }}
+          identifier: ${{ inputs.identifier }}
+          files: ${{ inputs.path }}
