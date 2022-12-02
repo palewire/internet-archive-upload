@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 retry = "*"
-pre-commit = "*"
+internetarchive = "*"
 
 [dev-packages]
 pre-commit = "*"

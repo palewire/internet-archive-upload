@@ -42,4 +42,4 @@ runs:
           access-key: ${{ inputs.access-key }}
           secret-key: ${{ inputs.secret-key }}
           identifier: ${{ inputs.identifier }}
-          files: ${{ inputs.path }}
+          files: ${{ inputs.files }}
