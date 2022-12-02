@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Upload file to biglocalnews.org
+      - name: Upload file to archive.org
         uses: palewire/internet-archive-upload@v1
         with:
           access-key: ${{ secrets.IA_ACCESS_KEY }}
@@ -44,7 +44,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Upload file to biglocalnews.org
+      - name: Upload file to archive.org
         uses: palewire/internet-archive-upload@v1
         with:
           access-key: ${{ secrets.IA_ACCESS_KEY }}
